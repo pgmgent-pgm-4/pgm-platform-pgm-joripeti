@@ -1,0 +1,12 @@
+.logo_container {
+    width: 5rem;
+    display: inline-block; 
+    cursor: pointer; 
+}
+
+.logo {
+    fill: currentColor; /* Use CSS color property */
+    transition: fill 0.1s ease-in-out;
+    height: 15rem; 
+    width: 15rem;   
+}

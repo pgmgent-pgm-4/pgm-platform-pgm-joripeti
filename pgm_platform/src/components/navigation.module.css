@@ -1,0 +1,43 @@
+/* navigation.module.css */
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Default setting for phones */
+    grid-gap: 1px;
+    padding: 1rem;
+    border: 1px solid #333;
+    width: 100%;
+  }
+  
+  @media (min-width: 500px) {
+    .gridContainer {
+      grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+    }
+  }
+
+  /* Tablet screens - typically starts at 768px, adjust if needed */
+  @media (min-width: 768px) {
+    .gridContainer {
+      grid-template-columns: repeat(3, 1fr); /* Two columns for tablets */
+    }
+  }
+  
+  /* Desktop screens - typically starts at 992px, adjust if needed */
+  @media (min-width: 992px) {
+    .gridContainer {
+      grid-template-columns: repeat(4, 1fr); /* Three columns for desktops */
+    }
+  }
+  
+  /* Large desktops - often considered at 1200px */
+  @media (min-width: 1200px) {
+    .gridContainer {
+      grid-template-columns: repeat(6, 1fr); /* Four columns for larger desktops */
+    }
+  }
+  
+  /* Dark mode styling, assuming :global() is correctly set up in your CSS Modules */
+  :global(body.dark) .gridContainer {
+    border-color: #fff; /* White borders in dark mode */
+  }
+  

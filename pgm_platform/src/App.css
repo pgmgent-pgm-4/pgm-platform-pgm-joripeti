@@ -1,0 +1,40 @@
+body {
+  transition: background-color 0.5s, color 0.5s;
+  padding: 0 0 2rem 0;
+}
+
+body.dark {
+  background-color: #333;
+  color: #fff;
+}
+
+
+/* link layouting for dark and light modes */
+body.dark a { 
+  color: white;
+  background-color: #333;
+}
+
+body:not(.dark) a {
+  color: black;
+  background-color: #fff;
+}
+
+.home_mid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical */
+  align-items: center; /* horizontal */
+  padding: 1rem 2rem;
+}
+
+.disclaimer {
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+
+

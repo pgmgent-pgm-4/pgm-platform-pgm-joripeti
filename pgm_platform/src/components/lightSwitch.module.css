@@ -1,0 +1,19 @@
+.switchGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: bottom;
+  gap: 1rem;
+}
+
+.switchGroup :nth-child(3) {
+  margin-left: .5rem;
+}
+
+.icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+.toggle {
+  cursor: pointer;
+}
