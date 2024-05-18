@@ -20,12 +20,18 @@ body:not(.dark) a {
   background-color: #fff;
 }
 
+footer {
+  margin-top: 5rem;
+}
+
 .home_mid {
   display: flex;
   flex-direction: column;
   justify-content: center; /* vertical */
   align-items: center; /* horizontal */
   padding: 1rem 2rem;
+  gap: 8rem;
+  margin-top: 4rem;
 }
 
 .disclaimer {
@@ -36,5 +42,28 @@ body:not(.dark) a {
   width: 100%;
 }
 
+.error {
+  font-size: 0.8rem;
+  margin: 5rem auto;
+  display: block;
+  text-align: center;
+  width: 100%;
+}
 
+.home.list_item {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
 
+.badge .MuiBadge-badge {
+  transform: translate(1.5rem, -.5rem);
+}
+
+.home.auteur {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 2rem;
+}

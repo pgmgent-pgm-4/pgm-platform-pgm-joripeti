@@ -1,18 +1,17 @@
-import React, { useContext } from 'react';
-import { Grid, Typography, useTheme } from '@mui/material';
-import { ThemeContext } from '../context/ThemeContext';
-import logo from '../assets/logo3-light.png';
-import logoDark from '../assets/logo3-dark.png';
+import React from 'react';
+import { Divider, Grid, Typography } from '@mui/material';
 import Logo from './Logo';
-import styles from './footer.module.css';
 import { ROUTES } from '../routes/routes';
 import { NavLink } from 'react-router-dom';
 
 export default function Footer() {
-    const { isDarkMode, setIsDarkMode } = useContext(ThemeContext);
-    const theme = useTheme();
+
   return (
     <footer>
+        <>
+        <Divider textAlign='left' className='divider'>
+            more about us... 
+        </Divider>
         <Grid container justifyContent="space-between" alignItems="top" padding={2} gap={4}>
             <Grid item xs={12} sm={6} md={4}>
                 <a href={ROUTES.home.path}>
@@ -54,6 +53,7 @@ export default function Footer() {
                     MADE BY SUPERSMART - 2024 - <NavLink to={ ROUTES.disclaimer.path }>DISCLAIMER</NavLink> - A SMART BACHELOR</Typography>
             </Grid>
         </Grid>
+        </>
     </footer>
   );
 }

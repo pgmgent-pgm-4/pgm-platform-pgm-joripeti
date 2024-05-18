@@ -17,6 +17,8 @@ import BlogPost from './pages/BlogPost';
 import { MyMUITheme } from './context/ThemeContext';
 import { LightSwitch } from './components';
 
+import { BlogProvider } from './context/BlogContext';
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />} errorElement={<NotFound />}>
@@ -36,7 +38,9 @@ const router = createBrowserRouter(
 function App() {
   return (
     <MyMUITheme>
-      <RouterProvider router={router} />
+      <BlogProvider>
+        <RouterProvider router={router} />
+      </BlogProvider>
     </MyMUITheme>
   )
 }
