@@ -18,6 +18,7 @@ export default function Search() {
     programma: false,
     portfolio: false,
     services: false,
+    tags: false
   });
   const [isSearching, setIsSearching] = useState(false); // dit gaan we gebruiken om de loading spinner te tonen tijdens de debounce
 
@@ -30,7 +31,8 @@ export default function Search() {
       includeBlog: filters.blog,
       includeProgramma: filters.programma,
       includePortfolio: filters.portfolio,
-      includeServices: filters.services
+      includeServices: filters.services,
+      includeTags: filters.tags
     },
   });
 
@@ -144,6 +146,11 @@ export default function Search() {
             {data.themas?.map((item) => (
               <Typography variant='h6' key={item.themaId}>
                 {item.themaTitel || 'Geen thema\'s gevonden'} 
+              </Typography>
+            ))}
+            {data.tags?.map((item) => (
+              <Typography variant='h6' key={item.tagId}>
+                {item.tagTitel || 'Geen tags gevonden'} 
               </Typography>
             ))}
           </>

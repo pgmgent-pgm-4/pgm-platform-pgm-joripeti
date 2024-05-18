@@ -6,7 +6,8 @@ query Search(
     $includeBlog: Boolean!, 
     $includeServices: Boolean!, 
     $includePortfolio: Boolean!, 
-    $includeProgramma: Boolean!
+    $includeProgramma: Boolean!,
+    $includeTags: Boolean!
   ) {
     opleidingen(where: {
       OR: [
@@ -51,6 +52,14 @@ query Search(
       blogpostId
       blogpostTitel
       blogpostTekst
+    }
+    tags(where: {
+      OR: [
+        { tagTitel_contains: $searchTerm },
+      ]
+    }) @include(if: $includeTags) {
+      tagId
+      tagTitel
     }
   }  
 `;
