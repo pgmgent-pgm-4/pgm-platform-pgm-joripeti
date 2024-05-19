@@ -13,6 +13,7 @@ export const MyMUITheme = ({ children }) => {
             primary: { main: '#556cd6' },
             secondary: { main: '#9747FF' },
             error: { main: '#D32F2F' },
+            blueGrey: { main: '#eceff1' },
             background: { default: isDarkMode ? '#333' : '#fff' },
             text: { primary: isDarkMode ? '#fff' : '#333' },
         },

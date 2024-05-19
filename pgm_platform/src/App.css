@@ -67,3 +67,23 @@ footer {
   align-items: center;
   margin-top: 2rem;
 }
+
+.appbar {
+  margin: 2rem 1rem;
+  max-width: 98.5%;
+}
+
+.grid.vakken {
+  margin: 4rem 1rem;
+  max-width: 95.5%;
+}
+
+.bg-rood { background-color: rgb(229, 78, 78); }
+.bg-groen { background-color: rgb(143, 232, 143); }
+.bg-blauw { background-color: rgb(150, 195, 226); }
+.bg-geel { background-color: rgb(249, 244, 84); }
+.bg-grijs { background-color: rgb(235, 235, 235); }
+
+.tag.title {
+  transform: translateX(-1rem);
+}
