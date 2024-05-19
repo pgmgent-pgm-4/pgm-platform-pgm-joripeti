@@ -12,8 +12,8 @@ export const ROUTES = {
         title: 'Blog',
     },
     blogPost: {
-        path: '/blog/:postId',
-        title: 'Post',
+        path: '/blogposts/:id',
+        title: 'Blogpost',
     },
     programme: {
         path: '/programma',

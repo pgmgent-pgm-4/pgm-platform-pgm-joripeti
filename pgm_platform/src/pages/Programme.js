@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AppBar, Toolbar, Button, Grid, Paper, Typography, Popover, Box } from '@mui/material';
 import useCurriculaData from '../hooks/useCurriculaData';
-import { BiBorderRadius } from 'react-icons/bi';
 
 const ProgrammaPage = () => {
   const { data: curricula, isLoading } = useCurriculaData();
@@ -65,7 +64,7 @@ const ProgrammaPage = () => {
     <div>
       <AppBar position="static" color="blueGrey">
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }, {mb: .7}, {mr: 5}}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1,  mb: .7, mr: 5}}>
             selecteer een curriculum:
           </Typography>
           {curricula.map(curriculum => (

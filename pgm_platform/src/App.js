@@ -8,12 +8,11 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 
-import { Home, Search, Blog, Programme, Portfolio, Services, Team, NotFound, Disclaimer } from "./pages";
+import { Home, Search, Blog, BlogPost, Programme, Portfolio, Services, Team, NotFound, Disclaimer } from "./pages";
 
 import Root from './layouts/Root';
 
 import { ROUTES } from './routes/routes';
-import BlogPost from './pages/BlogPost';
 import { MyMUITheme } from './context/ThemeContext';
 import { LightSwitch } from './components';
 
