@@ -90,8 +90,8 @@ const ProgrammaPage = () => {
           ))}
       </Box>
       <Grid container spacing={2} mt={4} className='grid vakken'>
-        {semesterGroups.map(({ semester, vakken }) => (
-          <Grid item key={semester} xs={2}>
+        {semesterGroups.map(({ semester, vakken }, index) => (
+          <Grid item key={index} xs={2}>
             <Typography variant="h5" gutterBottom mb={4}>{`Semester ${semester}`}</Typography>
             {vakken.map(vak => (
               <Paper
@@ -100,8 +100,8 @@ const ProgrammaPage = () => {
                 onClick={(event) => handleVakClick(event, vak)}
                 elevation={3}
               >
-                <Typography variant="h5">{vak.vakTitel}</Typography>
-                <Typography variant="h6" color="textSecondary">{vak.opleidingTitel}</Typography>
+                <Typography variant="h5">Vak • {vak.vakTitel}</Typography>
+                <Typography variant="h6" color="textSecondary">Opleiding • {vak.opleidingTitel}</Typography>
                 <Box className={getColorClass(vak.tags[0]?.kleur)} sx={{ width: 20, height: 20, borderRadius: 50, mt: 2 }}></Box>
               </Paper>
             ))}

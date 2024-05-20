@@ -87,3 +87,11 @@ footer {
 .tag.title {
   transform: translateX(-1rem);
 }
+
+.search.results {
+  margin: 1rem 0 0 0;
+}
+
+.opleidingen {
+  padding: 1rem;
+}

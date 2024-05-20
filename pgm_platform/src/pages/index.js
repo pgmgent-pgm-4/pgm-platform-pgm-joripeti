@@ -8,5 +8,7 @@ import Services from "./Services";
 import Team from "./Team";
 import NotFound from "./NotFound";
 import Disclaimer from "./Disclaimer";
+import Opleiding from "./Opleiding";
+import Opleidingen from "./Opleidingen";
 
-export { Home, Search, Blog, BlogPost, Programme, Portfolio, Services, Team, NotFound, Disclaimer };
+export { Home, Search, Blog, BlogPost, Programme, Portfolio, Services, Team, NotFound, Disclaimer, Opleiding, Opleidingen };

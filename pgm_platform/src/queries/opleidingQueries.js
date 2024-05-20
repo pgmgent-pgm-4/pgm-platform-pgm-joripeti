@@ -14,8 +14,18 @@ export const GET_OPLEIDINGEN = gql`
                 instructeurFamilienaam
                 instructeurBio
                 instructeurPic
+                }
             }
         }
-    }
-`;
+    `;
 
+export const GET_OPLEIDING = gql`
+    query GetOpleiding($id : ID!) {
+        opleiding(where: {id: $id}) {
+            id
+            opleidingTitel
+            opleidingOmschrijving
+            opleidingEcts
+            opleidingPic
+        }
+    }`;

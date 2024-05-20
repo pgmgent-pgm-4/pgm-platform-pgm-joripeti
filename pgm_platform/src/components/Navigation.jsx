@@ -17,7 +17,8 @@ export default function Navigation() {
             key !== 'home' &&        
             key !== 'notFound' &&    
             key !== 'blogPost' &&
-            key !== 'disclaimer'       
+            key !== 'disclaimer' &&
+            key !== 'opleiding'       
         )
         .map(([key, route]) => ({ ...route, key })); // Include the key to check for 'blog'
 

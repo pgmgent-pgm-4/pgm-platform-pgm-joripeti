@@ -8,13 +8,12 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 
-import { Home, Search, Blog, BlogPost, Programme, Portfolio, Services, Team, NotFound, Disclaimer } from "./pages";
+import { Home, Search, Blog, BlogPost, Programme, Portfolio, Services, Team, NotFound, Disclaimer, Opleiding, Opleidingen } from "./pages";
 
 import Root from './layouts/Root';
 
 import { ROUTES } from './routes/routes';
 import { MyMUITheme } from './context/ThemeContext';
-import { LightSwitch } from './components';
 
 import { BlogProvider } from './context/BlogContext';
 
@@ -30,6 +29,9 @@ const router = createBrowserRouter(
       <Route path={ROUTES.services.path} element={<Services />} />
       <Route path={ROUTES.team.path} element={<Team />} />
       <Route path={ROUTES.disclaimer.path} element={<Disclaimer />} />
+      <Route path={ROUTES.opleiding.path} element={<Opleiding />} />
+      <Route path={ROUTES.opleidingen.path} element={<Opleidingen />} />
+      
     </Route>
   )
 );

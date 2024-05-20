@@ -39,4 +39,13 @@ export const ROUTES = {
         path: '/disclaimer',
         title: 'Disclaimer',
     },
+    // routes voor search op home page
+    opleidingen: {
+        path: '/opleidingen',
+        title: 'Opleidingen',
+    },
+    opleiding: {
+        path: '/opleidingen/:id',
+        title: 'Opleiding',
+    },
 }

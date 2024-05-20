@@ -6,6 +6,8 @@ import { SEARCH } from '../graphql/queries';
 import debounce from 'lodash.debounce'; // Zorg ervoor dat lodash.debounce geïnstalleerd is
 import { useTheme } from '@mui/material/styles';
 import { ThemeContext } from '../context/ThemeContext';
+import { ROUTES } from '../routes/routes';
+import { Link } from 'react-router-dom';
 
 export default function Search() {
 
@@ -87,7 +89,7 @@ export default function Search() {
       </Typography>
       <TextField 
         fullWidth
-        label="je zoekterm hier"
+        label="vul hier je zoekterm in en kies hieronder het onderdeel waarin je wil zoeken"
         value={searchQuery}
         onChange={handleSearchInputChange}
         variant="outlined"
@@ -113,43 +115,80 @@ export default function Search() {
         {error && <Alert severity='error'>Oeps. Foutje... {error.message}</Alert>}
         {data && (
           <>
+            {data.opleidingen?.length > 0 ? 
+            <Typography variant='h5' sx={{ mt: 3 }}>
+              Opleidingen
+            </Typography> : null}
             {data.opleidingen?.map((item) => (
-              <Typography variant='h6' key={item.opleidingId}>
-                {item.opleidingTitel || 'Geen opleidingen gevonden'}
-              </Typography>
+              <Link to={ROUTES.opleiding.path.replace(':id', item.id)} key={`opleiding-${item.id}`}>
+                {console.log(item)}
+                <Typography variant='h6' className='search results'>
+                  {item.opleidingTitel || 'Geen opleidingen gevonden'}
+                </Typography>
+              </Link>
             ))}
+            {data.portfolios?.length > 0 ? 
+             <Typography variant='h5' sx={{ mt: 3 }}>
+             Portfolios
+           </Typography> : null}
             {data.portfolios?.map((item) => (
-              <Typography variant='h6' key={item.portfolioId}>
+              <Typography variant='h6' key={item.portfolioId} className='search results'>
                 {item.portfolioTitel || 'Geen portfolio gevonden'}
               </Typography>
             ))}
+            {data.services?.length > 0 ? 
+             <Typography variant='h5' sx={{ mt: 3 }}>
+             Services
+           </Typography> : null}
             {data.services?.map((item) => (
-              <Typography variant='h6' key={item.serviceId}>
+              <Typography variant='h6' key={item.serviceId} className='search results'>
                 {item.serviceTitel || 'Geen service gevonden'}
               </Typography>
             ))}
+            {data.blogposts?.length > 0 ? 
+             <Typography variant='h5' sx={{ mt: 3 }}>
+             Blogposts
+           </Typography> : null}
             {data.blogposts?.map((item) => (
-              <Typography variant='h6' key={item.blogpostId}>
-                {item.blogpostTitel || 'Geen blogposts gevonden'}
-              </Typography>
+              <Link to={ROUTES.blogPost.path.replace(':id', item.id)} key={`blogpost-${item.id}`}>
+                <Typography variant='h6' key={item.blogpostId} className='search results'>
+                  {item.blogpostTitel || 'Geen blogposts gevonden'}
+                </Typography>
+              </Link>
             ))}
+            {data.vakken?.length > 0 ? 
+             <Typography variant='h5' sx={{ mt: 3 }}>
+             Vakken
+           </Typography> : null}
             {data.vakken?.map((item) => (
-              <Typography variant='h6' key={item.vakId}>
+              <Typography variant='h6' key={item.vakId} className='search results'>
                 {item.vakTitel || 'Geen vakken gevonden'} 
               </Typography>
             ))}
+            {data.instructeurs?.length > 0 ? 
+             <Typography variant='h5' sx={{ mt: 3 }}>
+             Instructeurs
+           </Typography> : null}
             {data.instructeurs?.map((item) => (
-              <Typography variant='h6' key={item.instructeurId}>
+              <Typography variant='h6' key={item.instructeurId} className='search results'>
                 {item.instructeur_voornaam || 'Geen instructeurs gevonden'} 
               </Typography>
             ))}
+            {data.themas?.length > 0 ? 
+            <Typography variant='h5' sx={{ mt: 3 }}>
+            Themas
+            </Typography> : null}
             {data.themas?.map((item) => (
-              <Typography variant='h6' key={item.themaId}>
+              <Typography variant='h6' key={item.themaId} className='search results'>
                 {item.themaTitel || 'Geen thema\'s gevonden'} 
               </Typography>
             ))}
+            {data.tags?.length > 0 ? 
+              <Typography variant='h5' sx={{ mt: 3 }}>
+              Tags
+            </Typography> : null}
             {data.tags?.map((item) => (
-              <Typography variant='h6' key={item.tagId}>
+              <Typography variant='h6' key={item.tagId} className='search results'>
                 {item.tagTitel || 'Geen tags gevonden'} 
               </Typography>
             ))}

@@ -16,11 +16,13 @@ query Search(
       ],
       vakken_some: { id_not: null }
     }) @include(if: $includeProgramma) {
-      opleidingId
+      id
       opleidingTitel
       opleidingOmschrijving
       vakken {
+        id
         vakTitel
+        vakOmschrijving
       }
     }
     portfolios(where: {
@@ -29,7 +31,7 @@ query Search(
         { portfolioOmschrijving_contains: $searchTerm }
       ]
     }) @include(if: $includePortfolio) {
-      portfolioId
+      id
       portfolioTitel
       portfolioOmschrijving
     }
@@ -39,7 +41,7 @@ query Search(
         { serviceOmschrijving_contains: $searchTerm }
       ]
     }) @include(if: $includeServices) {
-      serviceId
+      id
       serviceTitel
       serviceOmschrijving
     }
@@ -49,7 +51,7 @@ query Search(
         { blogpostTekst_contains: $searchTerm }
       ]
     }) @include(if: $includeBlog) {
-      blogpostId
+      id
       blogpostTitel
       blogpostTekst
     }
@@ -58,7 +60,7 @@ query Search(
         { tagTitel_contains: $searchTerm },
       ]
     }) @include(if: $includeTags) {
-      tagId
+      id
       tagTitel
     }
   }  
