@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import useFetchBlogpost from '../hooks/useFetchBlogpost';
 import { CircularProgress, Typography, Box, Avatar } from '@mui/material';
+import { Helmet } from 'react-helmet';
 
 export default function BlogPost() {
 
@@ -21,6 +22,14 @@ export default function BlogPost() {
 
   // display the blogpost
   return (
+    <>
+    {blogpost && (  
+      <Helmet>
+        <title>{blogpost.blogpostTitel}</title>
+        <meta name="description" content={blogpost.blogpostTekst.length > 150 ? blogpost.blogpostTekst.substr(0, 147) + '...' : blogpost.blogpostTekst} />
+        <meta name="keywords" content="blogposts, SMART, education, IT, programmeren" />
+      </Helmet>
+    )}
     <Box sx={{ p: 3 }}>
       {blogpost && (
         <>
@@ -38,6 +47,7 @@ export default function BlogPost() {
         </>
       )}
     </Box>
+    </>
   );
 };
 

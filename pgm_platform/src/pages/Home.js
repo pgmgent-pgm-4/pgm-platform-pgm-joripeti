@@ -9,6 +9,8 @@ import useRandomService from '../hooks/useRandomService'
 
 import { Alert, Avatar, Badge, Box, Card, CardContent, CardHeader, CircularProgress, List, ListItem, Typography } from '@mui/material'
 
+import { Helmet } from 'react-helmet'
+
 export default function Home() {
 
 // 1 item ophalen
@@ -22,6 +24,12 @@ if (!randomOpleiding || !randomPortfolio || !randomBlogpost || !randomService) r
 if (errorOpleiding || errorPortfolio || errorBlogpost || errorService) return <Alert severity='error'>oeps... dit lukte niet helemaal</Alert>;
 
   return (
+    <>
+    <Helmet>
+      <title>Welkom bij SMART Education - Start Jouw IT Carrière</title>
+      <meta name="description" content="Start je reis in de technologie met SMART Education. Leer programmeren in onze interactieve klassen." />
+      <meta name="keywords" content="SMART Education, programmeren leren, IT carrière, technologie onderwijs" />
+    </Helmet>
     <div className='home_mid'>  
       <ImageRightTextLeft 
         key={randomOpleiding.id}
@@ -181,5 +189,6 @@ if (errorOpleiding || errorPortfolio || errorBlogpost || errorService) return <A
         }
       />
     </div>
+    </>
   );
 }

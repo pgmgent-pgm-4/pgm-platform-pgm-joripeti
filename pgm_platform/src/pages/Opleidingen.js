@@ -2,6 +2,7 @@ import React from 'react'
 import useOpleidingData from '../hooks/useOpleidingData';
 import { CircularProgress, Alert, Container, Grid, Card } from '@mui/material';
 import OpleidingItem from '../components/OpleidingItem';
+import { Helmet } from 'react-helmet';
 
 
 export default function Opleidingen() {
@@ -19,6 +20,13 @@ export default function Opleidingen() {
   }
 
   return (
+    <>
+      <Helmet>
+        <title>Opleidingen Aanbod bij SMART education</title>
+        <meta name="description" content="Bekijk ons uitgebreid aanbod aan programmeercursussen en kies de juiste opleiding voor jouw carrière." />
+        <meta name="keywords" content="SMART education opleidingen, programmeercursussen, IT opleidingen" />
+      </Helmet>
+
     <Grid container spacing={2} sx={{ marginTop: 2 }} className='opleidingen'>
       {opleidingen.map(opleiding => (
           <OpleidingItem 
@@ -31,6 +39,7 @@ export default function Opleidingen() {
           ))
         }
     </Grid>
+    </>
   )
 }
 

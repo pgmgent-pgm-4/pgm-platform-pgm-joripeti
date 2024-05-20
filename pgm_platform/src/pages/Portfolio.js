@@ -2,6 +2,7 @@ import React from 'react';
 import usePortfolioData from '../hooks/usePortfolioData';
 import { Box, Grid, Container, CircularProgress, Alert, Card, CardContent } from '@mui/material';
 import PortfolioItem from '../components/PortfolioItem';
+import { Helmet } from 'react-helmet';
 
 export default function Portfolio() {
   const { data: portfolios, isLoading, error } = usePortfolioData();
@@ -17,6 +18,13 @@ export default function Portfolio() {
   }
 
   return (
+    <>
+    <Helmet>
+      <title>Studenten Portfolio's - Code School</title>
+      <meta name="description" content="Bekijk de indrukwekkende portfolio's van onze studenten en zie wat je kunt bereiken bij Code School." />
+      <meta name="keywords" content="Code School portfolio's, studenten werken, programmeerprojecten" />
+    </Helmet>
+
     <Container maxWidth="lg">
       <Box className="videoContainer">
         <Card>
@@ -46,5 +54,6 @@ export default function Portfolio() {
         }
       </Grid>
     </Container>
+    </>
   );
 }

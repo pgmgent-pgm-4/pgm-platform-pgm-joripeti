@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import useTeamData from '../hooks/useTeamData'
 import { CircularProgress, Alert, Box, Paper, Typography, Grid, ButtonBase } from '@mui/material';
 import ExpandMore from '@mui/icons-material/ExpandMore'; 
+import { Helmet } from 'react-helmet';
 
 export default function Team() {
   const { data: instructeurs, isLoading, error } = useTeamData();
@@ -21,6 +22,13 @@ export default function Team() {
   };
 
   return (
+    <>
+    <Helmet>
+      <title>Ons Team - De Experts achter Code School</title>
+      <meta name="description" content="Maak kennis met het team van ervaren instructeurs en ondersteunend personeel bij Code School." />
+      <meta name="keywords" content="Code School team, instructeurs, onderwijs professionals" />
+    </Helmet>
+
     <Box sx={{ width: '100%' }}>
       <Grid container spacing={2}>
         {instructeurs.map((instructeur) => (
@@ -63,5 +71,6 @@ export default function Team() {
       </Box>
     )}
   </Box>
+  </>
 );
 }

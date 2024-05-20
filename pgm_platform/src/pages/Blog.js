@@ -4,9 +4,17 @@ import { ROUTES } from '../routes/routes';
 import useBlogpostData from '../hooks/useBlogpostData'
 import { useSearchBlog } from '../utils/searchBlog'
 import { Box, Grid, TextField, Typography, Card, CardMedia, CardContent, CircularProgress, Avatar } from '@mui/material';
-
+import { Helmet } from 'react-helmet';
 
 const BlogPage = () => {
+
+    <Helmet>
+        <title>Blog - Nieuws en Updates van Code School</title>
+        <meta name="description" content="Ontdek de nieuwste trends, tips en nieuws over programmeren direct van de experts bij SMART education." />
+        <meta name="keywords" content="Code School blog, programmeren nieuws, technologie updates" />
+    </Helmet>
+
+
     const [searchTerm, setSearchTerm] = useState('');
     const { data: blogs, isLoading } = useBlogpostData();
     const filteredBlogs = useSearchBlog(searchTerm, blogs);
