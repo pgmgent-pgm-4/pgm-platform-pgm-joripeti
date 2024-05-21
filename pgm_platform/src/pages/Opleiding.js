@@ -27,7 +27,7 @@ export default function Opleiding() {
       <Helmet>
         <title>{opleiding.opleidingTitel}</title>
         <meta name="description" content={opleiding.opleidingOmschrijving.length > 150 ? opleiding.opleidingOmschrijving.substr(0, 147) + '...' : opleiding.opleidingOmschrijving} />
-        <meta name="keywords" content="opleidings, SMART, education, IT, programmeren" />
+        <meta name="keywords" content="opleiding, SMART, education, IT, programmeren" />
       </Helmet>
     )}
     <Box sx={{ p: 3 }}>
