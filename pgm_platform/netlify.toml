@@ -1,0 +1,6 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[build.environment]
+  REACT_APP_HYGRAPH_URL = "https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clw3kmgnj0hq607w8jxs8w9xa/master"
