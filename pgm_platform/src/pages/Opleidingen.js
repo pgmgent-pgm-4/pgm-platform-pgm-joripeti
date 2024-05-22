@@ -1,6 +1,6 @@
 import React from 'react'
 import useOpleidingData from '../hooks/useOpleidingData';
-import { CircularProgress, Alert, Container, Grid, Card } from '@mui/material';
+import { CircularProgress, Alert, Grid } from '@mui/material';
 import OpleidingItem from '../components/OpleidingItem';
 import { Helmet } from 'react-helmet';
 

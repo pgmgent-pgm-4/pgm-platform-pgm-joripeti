@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Typography, Card, Grid } from '@mui/material';
+import { Box, Typography, Grid } from '@mui/material';
 
 export default function OpleidingItem({ pic, titel, omschrijving, ects }) {
   return (

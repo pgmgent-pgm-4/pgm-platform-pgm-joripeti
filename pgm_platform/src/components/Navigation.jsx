@@ -1,6 +1,6 @@
 // Navigation.js
 import React from 'react';
-import { Badge, Grid } from '@mui/material';
+import { Badge } from '@mui/material';
 import { ROUTES } from '../routes/routes';
 import styles from './navigation.module.css';
 import StyledNavLink from './StyledNavLink';

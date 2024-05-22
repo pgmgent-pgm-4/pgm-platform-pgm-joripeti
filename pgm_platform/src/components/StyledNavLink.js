@@ -1,6 +1,5 @@
-// StyledNavLink.js : a styled NavLink component (not functional component because that would have to re-render on every prop change, which is not necessary here)
+// StyledNavLink.js : een styled NavLink component (niet een functional component want die zou re-renderen bij elke prop change, which is not necessary here)
 
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 
